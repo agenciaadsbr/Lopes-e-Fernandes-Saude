@@ -1,0 +1,5 @@
+node_modules/
+.vercel/
+# geradas no build (scripts/fetch-images.mjs)
+public/img/*-800.webp
+public/img/*-1200.webp

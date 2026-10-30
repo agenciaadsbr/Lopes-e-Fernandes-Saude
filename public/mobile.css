@@ -1,0 +1,24 @@
+/* Mobile: textos centralizados */
+@media (max-width:640px){
+  main,.footer{text-align:center}
+  .eyebrow{justify-content:center}
+  .hero__copy,.neg__head > div,.contr__intro,.steps__intro,.office__body,.contact__copy,.story__body,.index__row,.pillars li,.sus__head{align-items:center}
+  .hero__facts li,.hero__facts li:not(:first-child){flex-direction:column;align-items:center;justify-content:center;gap:4px}
+  .gbadge{justify-self:center;text-align:left}
+  .hero__note{text-align:center}
+  .neg__list li{padding-left:0;align-items:center}
+  .neg__list li::before{position:static;margin-bottom:6px}
+  .index__row--cta .btn{align-self:center}
+  .clist li:hover{padding-left:0}
+  .timeline::before,.timeline::after{display:none}
+  .timeline li{grid-template-columns:1fr;gap:10px;justify-items:center}
+  .timeline h3{margin-top:0}
+  .timeline p{margin-inline:auto}
+  .qa summary{text-align:center;padding-left:54px}
+  .form{text-align:left}
+  .form label,.field__err,.form__status{text-align:center}
+  .form label.check{justify-content:center}
+  .footer__brand{justify-content:center;text-align:left}
+  .footer__nav{justify-content:center}
+  .footer__legal{margin-inline:auto}
+}

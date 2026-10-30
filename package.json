@@ -1,0 +1,8 @@
+{
+  "name": "coelho-fernandes-lp",
+  "private": true,
+  "type": "module",
+  "scripts": { "build": "node scripts/fetch-images.mjs" },
+  "dependencies": { "@vercel/blob": "2.8.0" },
+  "devDependencies": { "sharp": "0.34.5" }
+}

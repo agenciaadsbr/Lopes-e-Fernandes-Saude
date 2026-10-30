@@ -1,0 +1,44 @@
+/* Lopes & Fernandes Advogados: cores e logo (sobrepõe styles.css) */
+:root{
+  --navy:#0b2452;
+  --navy-2:#163266;
+  --navy-deep:#071a3c;
+  --cu:#d9a56b;
+  --cu-light:#e6b77f;
+  --cu-dark:#8c5a22;
+  --cu-soft:rgba(227,176,119,.34);
+  --grad:linear-gradient(135deg,#efc48f 0%,#e3b077 50%,#c8945a 100%);
+}
+
+/* Logo: símbolo como imagem, nome como máscara (herda a cor do texto) */
+.lf-word{display:block;background:currentColor;aspect-ratio:928.3/109.7;height:auto;
+  -webkit-mask:url(/brand/lf-word.svg) center/contain no-repeat;mask:url(/brand/lf-word.svg) center/contain no-repeat}
+.logo__mark{width:35px;height:41px}
+.logo:hover .logo__mark{transform:none}
+.logo__word{width:178px}
+.logo__tag{letter-spacing:.62em;font-size:.56rem}
+.office__mark{width:30%;height:auto;aspect-ratio:489.3/572.3}
+.office__word{width:80%}
+.office__brand .logo__tag{letter-spacing:.7em}
+.footer__mark{width:46px;height:54px}
+.footer__word{width:220px;color:#fff}
+
+/* Foto recortada sobre o azul da marca */
+.hero__frame{background:radial-gradient(130% 75% at 50% 100%,#1d3d78 0%,#0b2452 62%,#071a3c 100%)}
+.hero__frame::before{content:"";position:absolute;width:150%;aspect-ratio:1;left:-25%;top:12%;border-radius:50%;border:2px solid rgba(227,176,119,.28)}
+.hero__frame img{position:relative;object-fit:cover;object-position:50% 100%}
+
+/* Sinais do falso coletivo */
+.signs{list-style:none;margin:0;padding:0;display:flex;flex-direction:column;justify-content:center;min-width:0}
+.signs li{display:grid;grid-template-columns:44px 1fr;gap:16px;padding:20px 0;border-bottom:1px solid var(--line)}
+.signs li:first-child{border-top:1px solid var(--line)}
+.signs__n{width:44px;height:44px;border-radius:50%;display:grid;place-items:center;background:var(--navy);color:var(--cu-light);font-family:var(--f-display);font-weight:800}
+.signs p{color:var(--muted);margin-top:4px}
+.contr__note{font-size:.88rem;color:var(--on-navy-muted);border-left:2px solid var(--cu);padding-left:14px}
+.team{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:16px;margin:4px 0 0;padding:0;list-style:none}
+.team li{border:1px solid var(--line);border-radius:14px;padding:16px 18px;background:#fff;display:flex;flex-direction:column;gap:2px}
+.team strong{font-family:var(--f-display);font-size:1.05rem}
+@media (max-width:640px){
+  .team{grid-template-columns:1fr}
+  .signs li{grid-template-columns:1fr;justify-items:center;gap:10px}
+}

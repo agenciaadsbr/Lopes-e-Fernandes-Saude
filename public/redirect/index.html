@@ -1,0 +1,96 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Recebemos seu contato | Lopes &amp; Fernandes Advogados</title>
+<meta name="robots" content="noindex, nofollow">
+<meta name="theme-color" content="#0b2452">
+<link rel="icon" href="/favicon.svg" type="image/svg+xml">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Public+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap">
+<link rel="stylesheet" href="/styles.css">
+<link rel="stylesheet" href="/brand.css">
+<style>
+  body{background:var(--navy-deep);color:var(--on-navy);min-height:100vh;min-height:100dvh;display:flex;flex-direction:column;position:relative;overflow:hidden}
+  body::before{background:var(--navy-deep)}
+  .ty__ring{position:absolute;width:min(120vw,900px);aspect-ratio:1;border-radius:50%;border:2px solid rgba(207,144,94,.18);right:-35%;bottom:-45%;pointer-events:none}
+  .ty{flex:1;display:flex;align-items:center;justify-content:center;padding:48px max(20px,env(safe-area-inset-left,0px));position:relative;z-index:1}
+  .ty__card{width:100%;max-width:520px;text-align:center;display:flex;flex-direction:column;align-items:center;gap:22px}
+  .ty__mark{width:62px;height:73px}
+  .ty__word{width:220px;color:#fff}
+  .ty__brand{display:flex;flex-direction:column;align-items:center;gap:8px}
+  .ty__brand .logo__tag{color:var(--cu-light)}
+  .ty__check{width:64px;height:64px;border-radius:50%;background:var(--grad);display:grid;place-items:center;box-shadow:0 18px 40px -16px rgba(207,144,94,.7);animation:pop .6s var(--ease) both .1s}
+  .ty__check svg{width:30px;height:30px}
+  .ty h1{font-family:var(--f-display);font-weight:800;font-size:clamp(1.9rem,6vw,2.6rem);line-height:1.1;letter-spacing:-.02em;margin:0;color:#fff}
+  .ty p{margin:0;color:var(--on-navy-muted);font-size:1.05rem;max-width:42ch}
+  .ty__bar{width:100%;max-width:320px;height:4px;border-radius:4px;background:rgba(238,240,246,.12);overflow:hidden}
+  .ty__bar i{display:block;height:100%;width:0;background:var(--grad)}
+  .ty__bar.go i{width:100%;transition:width 3s linear}
+  .ty__count{font-family:var(--f-mono);font-size:.78rem;letter-spacing:.08em;text-transform:uppercase;color:var(--cu-light)}
+  .ty__btn{display:inline-flex;align-items:center;justify-content:center;gap:10px;font-family:var(--f-display);font-weight:700;font-size:1rem;text-decoration:none;border-radius:999px;padding:15px 26px;background:var(--grad);color:var(--navy-deep);transition:transform .25s var(--ease),box-shadow .25s}
+  .ty__btn:hover{transform:translateY(-2px);box-shadow:0 14px 30px -14px rgba(207,144,94,.8)}
+  .ty__back{color:var(--on-navy-muted);font-size:.92rem;text-underline-offset:3px}
+  .ty__back:hover{color:#fff}
+  [hidden]{display:none!important}
+  @keyframes pop{from{transform:scale(.4);opacity:0}to{transform:none;opacity:1}}
+  @media (prefers-reduced-motion:reduce){.ty__check{animation:none}.ty__bar.go i{transition:none}}
+</style>
+</head>
+<body>
+<div class="ty__ring" aria-hidden="true"></div>
+<main class="ty">
+  <div class="ty__card">
+    <div class="ty__brand">
+      <img class="ty__mark" src="/brand/lf-mark.svg" alt="">
+      <span class="lf-word ty__word" role="img" aria-label="Lopes &amp; Fernandes"></span>
+      <span class="logo__tag">Advogados</span>
+    </div>
+    <div class="ty__check" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="#0b1436" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg></div>
+    <h1>Recebemos seu contato.</h1>
+
+    <div id="ty-go" class="ty__card" style="gap:18px" hidden>
+      <p>Agora você vai ser levado ao WhatsApp do escritório para contar o seu caso.</p>
+      <div class="ty__bar" id="ty-bar"><i></i></div>
+      <span class="ty__count" id="ty-count" aria-live="polite">Abrindo o WhatsApp em 3 s</span>
+      <a class="ty__btn" id="ty-btn" href="#">Abrir o WhatsApp agora</a>
+    </div>
+
+    <div id="ty-wait" class="ty__card" style="gap:18px">
+      <p>A equipe do escritório vai chamar você pelo WhatsApp informado para entender o seu caso.</p>
+    </div>
+
+    <a class="ty__back" href="/">Voltar para o site</a>
+  </div>
+</main>
+<script>
+(function () {
+  // Número do WhatsApp do escritório: somente dígitos, com DDI 55 e DDD. Ex.: '5562999999999'
+  var WHATSAPP = '5562991518249';
+  var MSG = 'Olá! Acabei de preencher o formulário no site e gostaria de falar sobre o reajuste do meu plano de saúde.';
+  var SEGUNDOS = 3;
+
+  var n = WHATSAPP.replace(/\D/g, '');
+  if (n.length < 12) return; // sem número configurado: mostra apenas a confirmação
+
+  var url = 'https://wa.me/' + n + '?text=' + encodeURIComponent(MSG);
+  document.getElementById('ty-wait').hidden = true;
+  document.getElementById('ty-go').hidden = false;
+  document.getElementById('ty-btn').href = url;
+
+  var bar = document.getElementById('ty-bar'), count = document.getElementById('ty-count');
+  requestAnimationFrame(function () { requestAnimationFrame(function () { bar.classList.add('go'); }); });
+  var left = SEGUNDOS;
+  var t = setInterval(function () {
+    left -= 1;
+    if (left > 0) { count.textContent = 'Abrindo o WhatsApp em ' + left + ' s'; return; }
+    clearInterval(t);
+    count.textContent = 'Abrindo o WhatsApp…';
+    window.location.href = url;
+  }, 1000);
+})();
+</script>
+</body>
+</html>
