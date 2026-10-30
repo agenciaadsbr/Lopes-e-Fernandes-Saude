@@ -17,7 +17,7 @@ async function get(url) {
 }
 
 await mkdir(OUT, { recursive: true });
-const PROD = 'https://coelho-fernandes-lp.vercel.app';
+const PROD = 'https://www.lopesefernandes.adv.br';
 for (const img of IMAGES) {
   let buf;
   try { buf = await get(img.url || B + img.src + '.jpg?w=2000'); }

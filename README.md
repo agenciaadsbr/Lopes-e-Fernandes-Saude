@@ -2,7 +2,7 @@
 
 LP de reajuste de plano de saúde (falso coletivo). Produção: https://www.lopesefernandes.adv.br
 
-- Hospedagem: Vercel, time `ads-br`, projeto `coelho-fernandes-lp`
+- Hospedagem: Vercel, time `ads-br`, projeto `lopes-fernandes-saude` (conectado a este repositório; cada push na `main` publica o site)
 - HTML/CSS/JS puro em `public/`; página pós-formulário em `public/redirect/` (redireciona ao WhatsApp em 3 s)
 - `api/lead.js`: recebe o formulário e grava em Vercel Blob (`leads/saude/`); envia também para `LEAD_WEBHOOK_URL`, se configurada
 - Build (`npm run build`): `scripts/fetch-images.mjs` gera as fotos em WebP e o favicon

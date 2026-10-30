@@ -1,5 +1,5 @@
 {
-  "name": "coelho-fernandes-lp",
+  "name": "lopes-fernandes-saude",
   "private": true,
   "type": "module",
   "scripts": { "build": "node scripts/fetch-images.mjs" },
